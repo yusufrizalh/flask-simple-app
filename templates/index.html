@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>First Flask</title>
+  </head>
+  <body>
+    <h3>Hello Flask</h3>
+    <p>Learn Python Flask</p>
+    <p>My value is {{ myValue }}</p>
+    <p>The days:</p>
+    <ol>
+      {% for day in days %}
+      <li>{{day}}</li>
+      {% endfor %}
+    </ol>
+    <div>
+      <p>You are:</p>
+      {% if grade == "A" %}
+      <p>Excellent</p>
+      {% elif grade == "B" %}
+      <p>Good</p>
+      {% else %}
+      <p>Fail</p>
+      {% endif %}
+    </div>
+    <div>
+      {% set day = "Sunday" %}
+      <p>The day is <strong>{{day}}</strong></p>
+    </div>
+  </body>
+</html>
