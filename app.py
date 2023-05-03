@@ -96,5 +96,19 @@ def parsingArgument():
     return "Value of the argument is {}".format(data)
 
 
+# melewatkan dictionary ke template
+app.jinja_env.filters["zip"] = zip
+
+
+@app.route("/employees")
+def myEmployees():
+    employeesJson = {
+        "no": [1, 2, 3, 4, 5],
+        "name": ["Jonathan", "Maria", "Helena", "Jessica", "Esteban"],
+        "desg": ["Finance", "Frontoffice", "Backoffice", "Technology", "Marketing"],
+    }
+    return render_template("employees.html", employees=employeesJson)
+
+
 if __name__ == "__main__":
     app.run(debug=True, port=8001)
